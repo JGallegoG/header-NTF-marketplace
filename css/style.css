@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/*
+AQUI COMIENZA EL PROYECTO
+*/
+/*
+Creación de variables de tipografía y color
+*/
+/*
+mixins
+*/
+/* Reseteo de la página */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+body::before {
+  content: "";
+  width: 40%;
+  background-color: #2e2f38;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.container {
+  margin: 0 45px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.header {
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.header a {
+  text-decoration: none;
+}
+
+.nav {
+  margin-left: 130px;
+  margin: 0 auto;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 46px;
+}
+.nav ul a {
+  color: #2e2f38;
+  font-weight: 300;
+  transition: all 0.4s ease;
+}
+.nav ul a:hover {
+  color: #fa504d;
+}
+
+.login {
+  margin-left: auto;
+}
+.login ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+.login ul a {
+  color: #fff;
+  font-weight: 300;
+}
+.login .btn {
+  display: inline-block;
+  background-color: #fa504d;
+  padding: 8px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.login .btn:hover {
+  background: #571c1b;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+main .nft_txt .txt {
+  color: #fa504d;
+  font-family: "Belgrano", serif;
+  font-size: 250px;
+  position: absolute;
+  transform: rotate(90deg);
+  top: 40%;
+  right: -40%;
+  z-index: -1;
+  color: rgba(179, 177, 177, 0.1450980392);
+}
+main .hero {
+  grid-column: 1/span 1;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+main .hero .hero_title {
+  font-family: "Belgrano", serif;
+  font-size: 55px;
+  line-height: 70px;
+  font-weight: 400;
+}
+main .hero .hero_subtitle {
+  color: #bebebe;
+  font-weight: 200;
+  font-size: 20px;
+  margin: 20px 0;
+  position: relative;
+}
+main .hero .hero_subtitle::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 105px;
+  background-color: #fa504d;
+  bottom: 0;
+  transform: rotate(-2deg);
+}
+main .hero .hero_btn {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+main .hero .hero_btn a.btn {
+  display: inline-block;
+  background-color: #fa504d;
+  padding: 8px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  padding: 12px 60px;
+  color: #fff;
+}
+main .hero .hero_btn a.btn:hover {
+  background: #571c1b;
+}
+main .hero .hero_btn a {
+  font-weight: 300;
+  color: #bebebe;
+  transition: all 0.4s ease;
+}
+main .hero .hero_btn a.btn_le:hover {
+  color: #2e2f38;
+}
+main .features {
+  grid-column: 1/span 1;
+  padding-right: 40px;
+}
+main .features .feature_title {
+  font-family: "Belgrano", serif;
+  margin-bottom: 10px;
+}
+main .features .features_img {
+  display: flex;
+  justify-content: space-between;
+}
+main .features .features_img img {
+  width: 48%;
+  border: 1px solid #bebebe;
+  padding: 4px;
+}
+main .nft {
+  grid-column: 2/span 2;
+  grid-row: 1/span 2;
+  padding: 0 30px;
+}
+main .nft_img img {
+  max-width: 100%;
+}
+main .nft_datos {
+  background-color: white;
+  padding: 16px;
+  position: relative;
+  margin-top: -45px;
+  margin-bottom: 40px;
+}
+main .nft_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+main .nft_user {
+  display: flex;
+}
+main .nft_user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15px;
+}
+main .nft_user_name {
+  color: #bebebe;
+  font-weight: 300;
+}
+main .nft_name {
+  font-weight: bold;
+}
+main .nft_price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .nft_price_current {
+  color: #bebebe;
+}
+main .nft_price_number {
+  font-weight: bold;
+  font-size: 20px;
+}
+main .nft_btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+main .nft_btn a {
+  color: #fff;
+  font-weight: 300;
+}
+main .nft_btn a.btn {
+  display: inline-block;
+  background-color: #fa504d;
+  padding: 8px 25px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+main .nft_btn a.btn:hover {
+  background: #571c1b;
+}
+main .nft_btn a.btn:last-child {
+  background-color: transparent;
+  color: #fa504d;
+}
+main .nft_btn a.btn:last-child:hover {
+  color: #571c1b;
+}
+main .nft_numbers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+main .nft_number {
+  color: #fa504d;
+  font-size: 23px;
+  padding-right: 3px;
+}
+
+/*# sourceMappingURL=style.css.map */

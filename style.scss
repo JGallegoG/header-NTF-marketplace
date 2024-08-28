@@ -1,0 +1,288 @@
+/*
+AQUI COMIENZA EL PROYECTO
+*/
+
+/*
+Creación de variables de tipografía y color
+*/
+$color-bg:#2e2f38;
+$color-white:#fff;
+$color-red: #fa504d;
+$color-red-hover: #571c1b;
+$color-subtitle: #bebebe;
+
+$font-title:"Belgrano", serif;
+$font-normal:"Poppins", sans-serif;
+
+/*
+mixins
+*/
+@mixin button(){
+  display: inline-block;
+  background-color: $color-red;
+  padding: 8px 25px;
+  text-decoration: none;
+  transition: all .4s ease;
+  &:hover{
+    background: $color-red-hover;
+
+  }
+}
+
+/* Reseteo de la página */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: $font-normal;
+  font-size: 16px;
+  &::before{
+    content: '';
+    width: 40%;
+    background-color: $color-bg;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+.container{
+  margin: 0 45px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.header{
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  a{
+    text-decoration: none;
+  }
+
+}
+
+.nav{
+  margin-left: 130px;
+  margin: 0 auto;
+  ul{
+    list-style: none;
+    display: flex;
+    gap: 46px;
+    a{
+      color: $color-bg;
+      font-weight: 300;
+      transition: all .4s ease;
+      &:hover{
+        color: $color-red;
+      }
+    }
+  }
+
+}
+
+.login{
+  margin-left: auto;
+  ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    a{
+      color: $color-white;
+      font-weight: 300;
+    }
+  }
+  .btn{
+    @include button();
+  }
+}
+
+main{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  .nft_txt{
+    .txt{
+      color: #fa504d;
+      font-family: $font-title;
+      font-size: 250px;
+      position: absolute;
+      transform: rotate(90deg);
+      top: 40%;
+      right: -40%;
+      z-index: -1;
+      color: #b3b1b125;
+    }
+}
+
+.hero{
+  grid-column: 1 / span 1;
+  margin-bottom: 20px;
+  padding-top: 50px;
+
+  .hero_title{
+    font-family: $font-title;
+    font-size: 55px;
+    line-height: 70px;
+    font-weight: 400;
+
+  }
+  .hero_subtitle{
+    color: $color-subtitle;
+    font-weight: 200;
+    font-size: 20px;
+    margin: 20px 0;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 105px;
+      background-color: $color-red;
+      bottom: 0;
+      transform: rotate(-2deg);
+    }
+  }
+  .hero_btn{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    a.btn{
+      @include button();
+      padding: 12px 60px;
+      color: $color-white;
+    }
+    a{
+      font-weight: 300;
+      color: $color-subtitle;
+      transition: all .4s ease;
+    }
+    a.btn_le:hover{
+      color: $color-bg;
+    }
+  }
+}
+
+.features{
+  grid-column: 1 /span 1;
+  padding-right: 40px;
+  .feature_title{
+    font-family: $font-title;
+    margin-bottom: 10px;
+  }
+  .features_img{
+    display: flex;
+    justify-content: space-between;
+    img{
+      width: 48%;
+      border: 1px solid $color-subtitle;
+      padding: 4px;
+    }
+  }
+}
+
+.nft{
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 2;
+  padding: 0 30px;
+
+  &_img{
+    img{
+      max-width: 100%;
+    }
+  }
+
+
+  }
+
+  .nft_datos{
+    background-color: white;
+    padding: 16px;
+    position: relative;
+    margin-top: -45px;
+    margin-bottom: 40px;
+
+  }
+
+  .nft_header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  .nft_user{
+    display: flex;
+    &-data{
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 15px;
+    }
+
+  }
+
+  .nft_user_name{
+    color: $color-subtitle;
+    font-weight: 300;
+  }
+
+  .nft_name{
+    font-weight: bold;
+  }
+
+  .nft_price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_current{
+      color: $color-subtitle;
+    }
+    &_number{
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+
+  .nft_btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    a{
+      color: $color-white;
+      font-weight: 300;
+    }
+    a.btn {
+      @include button();
+      &:last-child{
+        background-color: transparent;
+        color: $color-red;
+        &:hover{
+          color: $color-red-hover;
+        }
+      }
+    }
+  }
+
+  .nft_numbers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color-white;
+  }
+  .nft_number{
+    color: $color-red;
+    font-size: 23px;
+    padding-right: 3px;
+  }
+
+}
